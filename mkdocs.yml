@@ -1,0 +1,34 @@
+site_name: Software Documentation
+theme:
+  name: material
+  logo: assets/Exodus-logo-full-1.png
+  favicon: assets/Exodus-logo.png
+  palette:
+    scheme: slate
+    primary: white
+    accent: red
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - content.tabs.link
+    - content.code.copy
+    - navigation.footer
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
