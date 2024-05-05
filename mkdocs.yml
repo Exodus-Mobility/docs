@@ -12,6 +12,7 @@ theme:
     - navigation.tabs.sticky
     - content.tabs.link
     - content.code.copy
+    - content.code.annotate
     - navigation.footer
 markdown_extensions:
   - admonition
