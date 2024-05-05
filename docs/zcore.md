@@ -113,7 +113,7 @@ Lets assume that we wanted to add a get /example_url endpoint on the [beneficiar
 
 
 3. create githiub pull request agains master, get a review and after being approved merge the changes to master.
-4. When the changes are merged to master the CI/CD pipline kicks on an automatically deploys your changes. 
+4. When the changes are merged to master the CI/CD pipline kicks in and automatically deploys your changes. 
 5. When the deploy is complete your new endpoint should be available to the ussd app via `GET http://internal-backend-892516406.me-south-1.elb.amazonaws.com/api/example_url`
 
 
@@ -186,7 +186,7 @@ Lets assume we want to add a new blueprint to the web API called example.py that
     ```
 
 5. create githiub pull request agains master, get a review and after being approved merge the changes to master.
-6. When the changes are merged to master the CI/CD pipline kicks on an automatically deploys your changes. 
+6. When the changes are merged to master the CI/CD pipline kicks in and automatically deploys your changes. 
 7. When the deploy is complete your new endpoint should be available to the ussd app via `GET http://internal-backend-892516406.me-south-1.elb.amazonaws.com/api/example_url`
 
 
@@ -307,7 +307,7 @@ Lets assume that we wanted to add a get transaction by QID endpoint on the [tran
 
 
 3. create githiub pull request agains master, get a review and after being approved merge the changes to master.
-4. When the changes are merged to master the CI/CD pipline kicks on an automatically deploys your changes. 
+4. When the changes are merged to master the CI/CD pipline kicks in and automatically deploys your changes. 
 5. When the deploy is complete your new endpoint should be accesible via `GET https://api.exodusmobility.io/api/transaction/<qid>`
 
 
@@ -382,7 +382,7 @@ Lets assume we want to add a new blueprint to the web API called example.py that
     ```
 
 5. create githiub pull request agains master, get a review and after being approved merge the changes to master.
-6. When the changes are merged to master the CI/CD pipline kicks on an automatically deploys your changes. 
+6. When the changes are merged to master the CI/CD pipline kicks in and automatically deploys your changes. 
 7. When the deploy is complete your new endpoint should be accesible via `GET https://api.exodusmobility.io/api/example_url`
 
 
