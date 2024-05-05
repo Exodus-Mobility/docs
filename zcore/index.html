@@ -1,0 +1,1685 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../xussd/">
+      
+      
+        <link rel="next" href="../zeaddmod/">
+      
+      
+      <link rel="icon" href="../assets/Exodus-logo.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>Core Service - Software Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#core-service" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Software Documentation" class="md-header__button md-logo" aria-label="Software Documentation" data-md-component="logo">
+      
+  <img src="../assets/Exodus-logo-full-1.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Core Service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/" class="md-tabs__link">
+        
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sms/" class="md-tabs__link">
+        
+  
+    
+  
+  SMS Service
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../xussd/" class="md-tabs__link">
+        
+  
+    
+  
+  USSD Service
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Core Service
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../zeaddmod/" class="md-tabs__link">
+        
+  
+    
+  
+  Adding A new Service
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Software Documentation" class="md-nav__button md-logo" aria-label="Software Documentation" data-md-component="logo">
+      
+  <img src="../assets/Exodus-logo-full-1.png" alt="logo">
+
+    </a>
+    Software Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SMS Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xussd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    USSD Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Core Service
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Core Service
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-balancers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Balancers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-api-ussd-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal API/ USSD API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal API/ USSD API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extending-internal-api-ussd-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extending Internal API/ USSD API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extending Internal API/ USSD API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-api-endpoint-on-an-existing-falsk-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding An API Endpoint On An Existing Falsk Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-api-endpoint-by-adding-a-new-falsk-bleuprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding an API endpoint by adding a new falsk bleuprint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extrenal-api-web-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extrenal API/ WEB API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extrenal API/ WEB API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extending-extrenal-api-web-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extending Extrenal API/ WEB API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extending Extrenal API/ WEB API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-api-endpoint-on-an-existing-falsk-blueprint_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding An API Endpoint On An Existing Falsk Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-api-endpoint-by-adding-a-new-falsk-bleuprint_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding an API endpoint by adding a new falsk bleuprint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webhooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-cleark-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring cleark webhooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-tanda-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Tanda webhooks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Worker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Worker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data layer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secrets
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zeaddmod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding A new Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-balancers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Balancers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-api-ussd-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal API/ USSD API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal API/ USSD API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extending-internal-api-ussd-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extending Internal API/ USSD API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extending Internal API/ USSD API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-api-endpoint-on-an-existing-falsk-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding An API Endpoint On An Existing Falsk Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-api-endpoint-by-adding-a-new-falsk-bleuprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding an API endpoint by adding a new falsk bleuprint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extrenal-api-web-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extrenal API/ WEB API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extrenal API/ WEB API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extending-extrenal-api-web-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extending Extrenal API/ WEB API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extending Extrenal API/ WEB API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-api-endpoint-on-an-existing-falsk-blueprint_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding An API Endpoint On An Existing Falsk Blueprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-api-endpoint-by-adding-a-new-falsk-bleuprint_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding an API endpoint by adding a new falsk bleuprint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webhooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-cleark-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring cleark webhooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-tanda-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Tanda webhooks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Worker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Worker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data layer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secrets
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="core-service">Core Service</h1>
+<h3 id="intro">Intro</h3>
+<p>The core service is a serise of micro services built in python/Flask and connected to our main postgres database. It Exposes all APIs needed to perform any manupulation of the digital wallet. It has two types of APIs it exposes 1. internal API (Used by the ussd service to manupilate and query the wallet) 2. External API (Used by the demo webapp to manipulate and query the wallet). The core services consists of 3 types of layers; API layer, Webhook layer and worker layer which are deployed as separate micro services in docker containers on AWS ECS.</p>
+<pre class="mermaid"><code>flowchart TD
+E[/External API\]
+I[/internal API\]
+W[/webhooks\]
+Z[/event workers\]
+Q&gt;Event queue]
+D[(Primary database)]
+K[\Demo webapp/]
+J[\USSD service/]
+
+J --&gt; I
+K --&gt; E
+I --&gt; D
+K --&gt; D
+W --&gt; D
+Q --&gt; Z
+Z --&gt; D
+
+
+</code></pre>
+<h3 id="load-balancers">Load Balancers</h3>
+<p>We use Application loadbalancers (ALBs) to balanace the tarffic going to our Apps running on ECS services (containers), the ECS services are atached to the ALBs via target groups. We have two types of loadbalances that we expose to all our services:</p>
+<ol>
+<li>
+<p><a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/terraform/alb/main.tf#L22">Internal Load balancer</a> - This load balancer is named <code>backend</code> and is deployed on our internal subnet of our VPC (This subnet is not accesible over the public internet). In this Load balancer we attach API services that we don not want things to reach directly from the internet. Services attached here currently are</p>
+<ul>
+<li>Internal API/ USSD API</li>
+<li>Extrenal API/ WEB API</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you use the terraform module <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/terraform/modules/ecs_service">ecs_service</a> to create your service it will be attached to the internal ALB by default unless you specify otherwise.</p>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/terraform/external_alb/main.tf#L22">External Load balancer</a> - This load  balancer is named <code>backend-external</code> and is deployed in our External subnets of our VPC(This subnet is accesible over the public internet). In this Load balancer we attach API services that we  want things to reach directly from the internet. Services attached here currently are:</p>
+<ul>
+<li>Webhooks</li>
+<li>Flask Admin</li>
+<li>Metabase</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you use the terraform module <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/terraform/modules/ecs_service">ecs_service</a> to create your service, you will need to specify <code>load_balancer_name    = "backend-external"</code> so that your service can be attached to this loadbalancer. </p>
+</div>
+</li>
+</ol>
+<h3 id="internal-api-ussd-api">Internal API/ USSD API</h3>
+<p>This is the API that is only exposed to internal api clients (Clients that are on our Production virtual private cloud) e.g the USSD service. This API is authenticated via basic authentication where the user name is the wallet owner phone number and the password  is the wallet owners wallet pin. This API primarily supports the USSD operation and it was designed to share as much data in one call to minimize the roundtrip in the USSD session.</p>
+<p>The internal API micro service is  an <a href="https://aws.amazon.com/ecs/">AWS ECS service</a> named <code>core-api</code> deployed in AWS region <code>me-south-1</code>. The Ecs service definition is done in terraform and the files are found in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/terraform/core_ecs_service">/terraform/core_ecs_service/*</a>. The flask blueprints for this micro service are found in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/src/api/blueprints/core">/usrc/api/blueprints/*  excluding web folder</a></p>
+<h4 id="extending-internal-api-ussd-api">Extending Internal API/ USSD API</h4>
+<p>To extedend the USSD API by ading a new endpoint can be done in 2 ways</p>
+<ol>
+<li>Adding an API endpoint on an existing falsk blueprint</li>
+<li>Adding an API endpoint by adding a new falsk bleuprint</li>
+</ol>
+<h5 id="adding-an-api-endpoint-on-an-existing-falsk-blueprint">Adding An API Endpoint On An Existing Falsk Blueprint</h5>
+<p>Lets assume that we wanted to add a get /example_url endpoint on the <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/src/api/blueprints/core/beneficiary.py">beneficiary blueprint</a>. We will need to:</p>
+<ol>
+<li>
+<p>Create the new flask view named ExampleView on the  <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/src/api/blueprints/core/beneficiary.py">beneficiary.py blueprints file</a>.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-77">77</a></span>
+<span class="normal"><a href="#__codelineno-0-78">78</a></span>
+<span class="normal"><a href="#__codelineno-0-79">79</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">MethodView</span><span class="p">):</span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">():</span>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">Response</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Regiseter the <code>ExampleView</code> you've created above to the beneficiary blueprint by adding the following entries on the <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/src/api/blueprints/core/beneficiary.py#L80">create_blueprint function</a> inside the beneficiary.py blueprint file.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-60">60</a></span>
+<span class="normal"><a href="#__codelineno-1-61">61</a></span>
+<span class="normal"><a href="#__codelineno-1-62">62</a></span>
+<span class="normal"><a href="#__codelineno-1-63">63</a></span>
+<span class="normal"><a href="#__codelineno-1-64">64</a></span>
+<span class="normal"><a href="#__codelineno-1-65">65</a></span>
+<span class="normal"><a href="#__codelineno-1-66">66</a></span>
+<span class="normal"><a href="#__codelineno-1-67">67</a></span>
+<span class="normal"><a href="#__codelineno-1-68">68</a></span>
+<span class="normal"><a href="#__codelineno-1-69">69</a></span>
+<span class="normal"><a href="#__codelineno-1-70">70</a></span>
+<span class="normal"><a href="#__codelineno-1-71">71</a></span>
+<span class="normal"><a href="#__codelineno-1-72">72</a></span>
+<span class="normal"><a href="#__codelineno-1-73">73</a></span>
+<span class="normal"><a href="#__codelineno-1-74">74</a></span>
+<span class="normal"><a href="#__codelineno-1-75">75</a></span>
+<span class="normal"><a href="#__codelineno-1-76">76</a></span>
+<span class="normal"><a href="#__codelineno-1-77">77</a></span>
+<span class="normal"><a href="#__codelineno-1-78">78</a></span>
+<span class="normal"><a href="#__codelineno-1-79">79</a></span>
+<span class="normal"><a href="#__codelineno-1-80">80</a></span>
+<span class="normal"><a href="#__codelineno-1-81">81</a></span>
+<span class="normal"><a href="#__codelineno-1-82">82</a></span>
+<span class="normal"><a href="#__codelineno-1-83">83</a></span>
+<span class="normal"><a href="#__codelineno-1-84">84</a></span>
+<span class="normal"><a href="#__codelineno-1-85">85</a></span>
+<span class="normal"><a href="#__codelineno-1-86">86</a></span>
+<span class="normal"><a href="#__codelineno-1-87">87</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="k">def</span> <span class="nf">create_blueprint</span><span class="p">(</span><span class="n">at_prefix</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61"></a>    <span class="n">blueprint</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">Blueprint</span><span class="p">(</span><span class="s2">&quot;Beneficiary&quot;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">before_request</span><span class="p">(</span><span class="n">set_global_user</span><span class="p">)</span>
+</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">after_request</span><span class="p">(</span><span class="n">remove_global_user</span><span class="p">)</span>
+</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">register_error_handler</span><span class="p">(</span><span class="n">APIError</span><span class="p">,</span> <span class="n">make_api_error</span><span class="p">)</span>
+</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66"></a>
+</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67"></a>    <span class="k">def</span> <span class="nf">add_url_rule</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">view_func</span><span class="p">):</span>
+</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68"></a>        <span class="n">blueprint</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">view_func</span><span class="o">=</span><span class="n">view_func</span><span class="p">)</span>
+</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69"></a>        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;Core_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">view_func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span><span class="p">:</span>
+</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is already in the url_for_cache&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+</span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72"></a>        <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">at_prefix</span><span class="p">,</span> <span class="n">rule</span><span class="p">)</span>
+</span><span id="__span-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73"></a>
+</span><span id="__span-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74"></a>    <span class="n">add_url_rule</span><span class="p">(</span>
+</span><span id="__span-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75"></a>        <span class="s2">&quot;/beneficiary&quot;</span><span class="p">,</span>
+</span><span id="__span-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76"></a>        <span class="n">view_func</span><span class="o">=</span><span class="n">BeneficiaryView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s2">&quot;Beneficiary&quot;</span><span class="p">),</span>
+</span><span id="__span-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77"></a>    <span class="p">)</span>
+</span><span id="__span-1-78"><a id="__codelineno-1-78" name="__codelineno-1-78"></a>    <span class="n">add_url_rule</span><span class="p">(</span>
+</span><span id="__span-1-79"><a id="__codelineno-1-79" name="__codelineno-1-79"></a>        <span class="s2">&quot;/supported_banks&quot;</span><span class="p">,</span>
+</span><span id="__span-1-80"><a id="__codelineno-1-80" name="__codelineno-1-80"></a>        <span class="n">view_func</span><span class="o">=</span><span class="n">BeneficiaryBankView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s2">&quot;Banks&quot;</span><span class="p">),</span>
+</span><span id="__span-1-81"><a id="__codelineno-1-81" name="__codelineno-1-81"></a>    <span class="p">)</span>
+</span><span id="__span-1-82"><a id="__codelineno-1-82" name="__codelineno-1-82"></a>
+</span><span id="__span-1-83"><a id="__codelineno-1-83" name="__codelineno-1-83"></a><span class="hll">    <span class="n">add_url_rule</span><span class="p">(</span>
+</span></span><span id="__span-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="hll">        <span class="s2">&quot;/example_url&quot;</span><span class="p">,</span>
+</span></span><span id="__span-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85"></a><span class="hll">        <span class="n">view_func</span><span class="o">=</span><span class="n">ExampleView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">),</span>
+</span></span><span id="__span-1-86"><a id="__codelineno-1-86" name="__codelineno-1-86"></a><span class="hll">    <span class="p">)</span>
+</span></span><span id="__span-1-87"><a id="__codelineno-1-87" name="__codelineno-1-87"></a>    <span class="k">return</span> <span class="n">blueprint</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>create githiub pull request agains master, get a review and after being approved merge the changes to master.</p>
+</li>
+<li>When the changes are merged to master the CI/CD pipline kicks in and automatically deploys your changes. </li>
+<li>When the deploy is complete your new endpoint should be available to the ussd app via <code>GET http://internal-backend-892516406.me-south-1.elb.amazonaws.com/api/example_url</code></li>
+</ol>
+<h5 id="adding-an-api-endpoint-by-adding-a-new-falsk-bleuprint">Adding an API endpoint by adding a new falsk bleuprint</h5>
+<p>Lets assume we want to add a new blueprint to the web API called example.py that conatians a flask view named ExampleView that returns a 200 response for an authenticated get request. We will need to:</p>
+<ol>
+<li>
+<p>Create the new example.py blueprint file in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/src/api/blueprints/core">/src/api/blueprints/core/</a></p>
+</li>
+<li>
+<p>In the new blueprint we add the bew vie called ExampleView</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">flask.views</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">MethodView</span><span class="p">):</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">():</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">Response</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Add the create_blueprint function and in it register the requred before and after request function hooks, error handler functions  and attach the view we have created.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">flask</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kn">import</span> <span class="nn">flask.views</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kn">from</span> <span class="nn">api.blueprints.common</span> <span class="kn">import</span> <span class="n">api_json_response</span><span class="p">,</span> <span class="n">make_api_error</span><span class="p">,</span> <span class="n">remove_global_user</span><span class="p">,</span> <span class="n">set_global_user</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="kn">from</span> <span class="nn">api.blueprints.errors</span> <span class="kn">import</span> <span class="n">APIError</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">MethodView</span><span class="p">):</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">():</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">Response</span><span class="p">()</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="k">def</span> <span class="nf">create_blueprint</span><span class="p">(</span><span class="n">at_prefix</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="n">blueprint</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">Blueprint</span><span class="p">(</span><span class="s2">&quot;Example&quot;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">before_request</span><span class="p">(</span><span class="n">set_global_user</span><span class="p">)</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">after_request</span><span class="p">(</span><span class="n">remove_global_user</span><span class="p">)</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">register_error_handler</span><span class="p">(</span><span class="n">APIError</span><span class="p">,</span> <span class="n">make_api_error</span><span class="p">)</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a>    <span class="k">def</span> <span class="nf">add_url_rule</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">view_func</span><span class="p">):</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a>        <span class="n">blueprint</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">view_func</span><span class="o">=</span><span class="n">view_func</span><span class="p">)</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21"></a>        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;Core_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">view_func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span><span class="p">:</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is already in the url_for_cache&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a>        <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">at_prefix</span><span class="p">,</span> <span class="n">rule</span><span class="p">)</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25"></a>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26"></a>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27"></a>    <span class="n">add_url_rule</span><span class="p">(</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28"></a>        <span class="s2">&quot;/example_url&quot;</span><span class="p">,</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29"></a>        <span class="n">view_func</span><span class="o">=</span><span class="n">ExampleView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">),</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30"></a>    <span class="p">)</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32"></a>    <span class="k">return</span> <span class="n">blueprint</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>On the <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/terraform/core_ecs_service/main.tf#L6">/terraform/core_ecs_service/main.tf</a> update the entry_point to start this new blueprint.</p>
+<div class="language-tf highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;core-service&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="na">source</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;../modules/ecs_service&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="na">service_name</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;core&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="na">launch_name_prefix</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;core-api&quot;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="na">path_pattern</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/api/*&quot;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="na">entry_point</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;api-run-server&quot;, &quot;--workers&quot;, &quot;2&quot;, &quot;-i&quot;, &quot;0.0.0.0&quot;, &quot;-trace-id&quot;, &quot;X-Amzn-Trace-Id&quot;, &quot;core.example:/api&quot;,  &quot;core.login_registartion:/api&quot;, &quot;core.beneficiary:/api&quot;, &quot;core.account:/api&quot;, &quot;core.health:/api&quot;</span><span class="p">]</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>create githiub pull request agains master, get a review and after being approved merge the changes to master.</p>
+</li>
+<li>When the changes are merged to master the CI/CD pipline kicks in and automatically deploys your changes. </li>
+<li>When the deploy is complete your new endpoint should be available to the ussd app via <code>GET http://internal-backend-892516406.me-south-1.elb.amazonaws.com/api/example_url</code></li>
+</ol>
+<h3 id="extrenal-api-web-api">Extrenal API/ WEB API</h3>
+<p>This is the API that is exposed to external api clients (Clients that are anywhere on the internet) via the <a href="https://aws.amazon.com/api-gateway/">AWS API gateway</a> e.g the Demo web APP. This API is authenticated via token based authentication where the bearer toke  is the cleark jwt token of an authenticated user on our cleark account.</p>
+<p>The External API micro service is  an <a href="https://aws.amazon.com/ecs/">AWS ECS service</a> named <code>web-core</code> deployed in AWS region <code>me-south-1</code>. The Ecs service definition is done in terraform and the files are found in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/terraform/web_core_ecs_service">/terraform/web_core_ecs_service/*</a>. The flask blueprints for this micro service are found in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/src/api/blueprints/core/web">/usrc/api/blueprints/web/* </a></p>
+<p>The web API blueprints uses the <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/src/api/blueprints/common.py#L87"><code>set_clerk_global_user</code></a> function to check authentication and pull a user from a cleark id conatained on the cleark JWT tokn.</p>
+<p>If you are creating an Example Blueprint and you want to add cleark authentication, register the set_clerk_global_user function as a before request handler as shown bellow.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">...</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">import</span> <span class="nn">flask.views</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">from</span> <span class="nn">api.blueprints.common</span> <span class="kn">import</span> <span class="n">api_json_response</span><span class="p">,</span> <span class="n">make_api_error</span><span class="p">,</span> <span class="n">remove_global_user</span><span class="p">,</span> <span class="n">set_clerk_global_user</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kn">from</span> <span class="nn">api.blueprints.errors</span> <span class="kn">import</span> <span class="n">APIError</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="o">...</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">MethodView</span><span class="p">):</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">():</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="o">...</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">def</span> <span class="nf">create_blueprint</span><span class="p">(</span><span class="n">at_prefix</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">blueprint</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">Blueprint</span><span class="p">(</span><span class="s2">&quot;Example blueprint&quot;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">before_request</span><span class="p">(</span><span class="n">set_clerk_global_user</span><span class="p">)</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">after_request</span><span class="p">(</span><span class="n">remove_global_user</span><span class="p">)</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">register_error_handler</span><span class="p">(</span><span class="n">APIError</span><span class="p">,</span> <span class="n">make_api_error</span><span class="p">)</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="k">def</span> <span class="nf">add_url_rule</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">view_func</span><span class="p">):</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        <span class="n">blueprint</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">view_func</span><span class="o">=</span><span class="n">view_func</span><span class="p">)</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;Core_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">view_func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span><span class="p">:</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is already in the url_for_cache&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">at_prefix</span><span class="p">,</span> <span class="n">rule</span><span class="p">)</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>    <span class="n">add_url_rule</span><span class="p">(</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>        <span class="s2">&quot;/example_url&quot;</span><span class="p">,</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>        <span class="n">view_func</span><span class="o">=</span><span class="n">ExampleView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">),</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>    <span class="p">)</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>    <span class="k">return</span> <span class="n">blueprint</span>
+</span></code></pre></div>
+<p>The API gateway is named backend-apigw is defined interraform in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/terraform/api_gateway">/terraform/api_gateway/*</a> the definition consits of:</p>
+<ul>
+<li><a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/terraform/api_gateway/main.tf#L6">The API gateway DNS</a> api.exodusmobility.io</li>
+<li><a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/terraform/api_gateway/main.tf#L24">The API gateway integration</a> which is a v2 integration that is a HTTP_PROXY integration to the internal Aplication Load balancer via the <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/terraform/apigw_vpc_link">API gateway VPC link</a>.</li>
+<li><a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/terraform/api_gateway/main.tf#L44">The API gateway route</a> to route any traffic hitting it at <code>/api/*</code> to be fowarded to the internal ALB via the above gateway integration.</li>
+</ul>
+<h4 id="extending-extrenal-api-web-api">Extending Extrenal API/ WEB API</h4>
+<p>To extedend the Web API by ading a new endpoint can be done in 2 ways</p>
+<ol>
+<li>Adding an API endpoint on an existing falsk blueprint</li>
+<li>Adding an API endpoint by adding a new falsk bleuprint</li>
+</ol>
+<h5 id="adding-an-api-endpoint-on-an-existing-falsk-blueprint_1">Adding An API Endpoint On An Existing Falsk Blueprint</h5>
+<p>Lets assume that we wanted to add a get transaction by QID endpoint on the <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/src/api/blueprints/core/web/transactions.py">transactions blueprint</a>. We will need to:</p>
+<ol>
+<li>
+<p>Create the new flask view named TransactionView on the  <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/src/api/blueprints/core/web/transactions.py">transactions.py blueprints file</a>.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-50">50</a></span>
+<span class="normal"><a href="#__codelineno-6-51">51</a></span>
+<span class="normal"><a href="#__codelineno-6-52">52</a></span>
+<span class="normal"><a href="#__codelineno-6-53">53</a></span>
+<span class="normal"><a href="#__codelineno-6-54">54</a></span>
+<span class="normal"><a href="#__codelineno-6-55">55</a></span>
+<span class="normal"><a href="#__codelineno-6-56">56</a></span>
+<span class="normal"><a href="#__codelineno-6-57">57</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50"></a><span class="k">class</span> <span class="nc">TransactionView</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">MethodView</span><span class="p">):</span>
+</span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qid</span><span class="p">):</span>
+</span><span id="__span-6-52"><a id="__codelineno-6-52" name="__codelineno-6-52"></a>        <span class="n">user</span> <span class="o">=</span> <span class="n">get_global_user</span><span class="p">()</span>
+</span><span id="__span-6-53"><a id="__codelineno-6-53" name="__codelineno-6-53"></a>        <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-6-54"><a id="__codelineno-6-54" name="__codelineno-6-54"></a>            <span class="n">transaction</span> <span class="o">=</span> <span class="n">Receipt</span><span class="o">.</span><span class="n">from_qid</span><span class="p">(</span><span class="n">qid</span><span class="p">)</span>
+</span><span id="__span-6-55"><a id="__codelineno-6-55" name="__codelineno-6-55"></a>        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-6-56"><a id="__codelineno-6-56" name="__codelineno-6-56"></a>            <span class="n">CommonErrorCode</span><span class="o">.</span><span class="n">BAD_ARGUMENT_VALUE</span><span class="p">(</span><span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Invalid transaction_qid&quot;</span><span class="p">)</span>
+</span><span id="__span-6-57"><a id="__codelineno-6-57" name="__codelineno-6-57"></a>        <span class="k">return</span> <span class="n">api_json_response</span><span class="p">(</span><span class="n">ReceiptSerializer</span><span class="p">(</span><span class="n">transaction</span><span class="p">),</span> <span class="mi">200</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Regiseter the <code>TransactionView</code> you've created above to the transactions blueprint by adding the following entries on the <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/src/api/blueprints/core/web/transactions.py#L54">create_blueprint function</a> inside the transactions.py blueprint file.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-60">60</a></span>
+<span class="normal"><a href="#__codelineno-7-61">61</a></span>
+<span class="normal"><a href="#__codelineno-7-62">62</a></span>
+<span class="normal"><a href="#__codelineno-7-63">63</a></span>
+<span class="normal"><a href="#__codelineno-7-64">64</a></span>
+<span class="normal"><a href="#__codelineno-7-65">65</a></span>
+<span class="normal"><a href="#__codelineno-7-66">66</a></span>
+<span class="normal"><a href="#__codelineno-7-67">67</a></span>
+<span class="normal"><a href="#__codelineno-7-68">68</a></span>
+<span class="normal"><a href="#__codelineno-7-69">69</a></span>
+<span class="normal"><a href="#__codelineno-7-70">70</a></span>
+<span class="normal"><a href="#__codelineno-7-71">71</a></span>
+<span class="normal"><a href="#__codelineno-7-72">72</a></span>
+<span class="normal"><a href="#__codelineno-7-73">73</a></span>
+<span class="normal"><a href="#__codelineno-7-74">74</a></span>
+<span class="normal"><a href="#__codelineno-7-75">75</a></span>
+<span class="normal"><a href="#__codelineno-7-76">76</a></span>
+<span class="normal"><a href="#__codelineno-7-77">77</a></span>
+<span class="normal"><a href="#__codelineno-7-78">78</a></span>
+<span class="normal"><a href="#__codelineno-7-79">79</a></span>
+<span class="normal"><a href="#__codelineno-7-80">80</a></span>
+<span class="normal"><a href="#__codelineno-7-81">81</a></span>
+<span class="normal"><a href="#__codelineno-7-82">82</a></span>
+<span class="normal"><a href="#__codelineno-7-83">83</a></span>
+<span class="normal"><a href="#__codelineno-7-84">84</a></span>
+<span class="normal"><a href="#__codelineno-7-85">85</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-60"><a id="__codelineno-7-60" name="__codelineno-7-60"></a><span class="k">def</span> <span class="nf">create_blueprint</span><span class="p">(</span><span class="n">at_prefix</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-7-61"><a id="__codelineno-7-61" name="__codelineno-7-61"></a>    <span class="n">blueprint</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">Blueprint</span><span class="p">(</span><span class="s2">&quot;Transactions&quot;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-7-62"><a id="__codelineno-7-62" name="__codelineno-7-62"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-7-63"><a id="__codelineno-7-63" name="__codelineno-7-63"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">before_request</span><span class="p">(</span><span class="n">set_clerk_global_user</span><span class="p">)</span>
+</span><span id="__span-7-64"><a id="__codelineno-7-64" name="__codelineno-7-64"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">after_request</span><span class="p">(</span><span class="n">remove_global_user</span><span class="p">)</span>
+</span><span id="__span-7-65"><a id="__codelineno-7-65" name="__codelineno-7-65"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">register_error_handler</span><span class="p">(</span><span class="n">APIError</span><span class="p">,</span> <span class="n">make_api_error</span><span class="p">)</span>
+</span><span id="__span-7-66"><a id="__codelineno-7-66" name="__codelineno-7-66"></a>
+</span><span id="__span-7-67"><a id="__codelineno-7-67" name="__codelineno-7-67"></a>    <span class="k">def</span> <span class="nf">add_url_rule</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">view_func</span><span class="p">):</span>
+</span><span id="__span-7-68"><a id="__codelineno-7-68" name="__codelineno-7-68"></a>        <span class="n">blueprint</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">view_func</span><span class="o">=</span><span class="n">view_func</span><span class="p">)</span>
+</span><span id="__span-7-69"><a id="__codelineno-7-69" name="__codelineno-7-69"></a>        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;Core_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">view_func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-7-70"><a id="__codelineno-7-70" name="__codelineno-7-70"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span><span class="p">:</span>
+</span><span id="__span-7-71"><a id="__codelineno-7-71" name="__codelineno-7-71"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is already in the url_for_cache&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+</span><span id="__span-7-72"><a id="__codelineno-7-72" name="__codelineno-7-72"></a>        <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">at_prefix</span><span class="p">,</span> <span class="n">rule</span><span class="p">)</span>
+</span><span id="__span-7-73"><a id="__codelineno-7-73" name="__codelineno-7-73"></a>
+</span><span id="__span-7-74"><a id="__codelineno-7-74" name="__codelineno-7-74"></a>
+</span><span id="__span-7-75"><a id="__codelineno-7-75" name="__codelineno-7-75"></a>    <span class="n">add_url_rule</span><span class="p">(</span>
+</span><span id="__span-7-76"><a id="__codelineno-7-76" name="__codelineno-7-76"></a>        <span class="s2">&quot;/transactions&quot;</span><span class="p">,</span>
+</span><span id="__span-7-77"><a id="__codelineno-7-77" name="__codelineno-7-77"></a>        <span class="n">view_func</span><span class="o">=</span><span class="n">TransactionsView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s2">&quot;transactions&quot;</span><span class="p">),</span>
+</span><span id="__span-7-78"><a id="__codelineno-7-78" name="__codelineno-7-78"></a>    <span class="p">)</span>
+</span><span id="__span-7-79"><a id="__codelineno-7-79" name="__codelineno-7-79"></a><span class="hll">
+</span></span><span id="__span-7-80"><a id="__codelineno-7-80" name="__codelineno-7-80"></a><span class="hll">    <span class="n">add_url_rule</span><span class="p">(</span>
+</span></span><span id="__span-7-81"><a id="__codelineno-7-81" name="__codelineno-7-81"></a><span class="hll">        <span class="s2">&quot;/transaction/&lt;qid&gt;&quot;</span><span class="p">,</span>
+</span></span><span id="__span-7-82"><a id="__codelineno-7-82" name="__codelineno-7-82"></a><span class="hll">        <span class="n">view_func</span><span class="o">=</span><span class="n">TransactionView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s2">&quot;transaction&quot;</span><span class="p">),</span>
+</span></span><span id="__span-7-83"><a id="__codelineno-7-83" name="__codelineno-7-83"></a><span class="hll">    <span class="p">)</span>
+</span></span><span id="__span-7-84"><a id="__codelineno-7-84" name="__codelineno-7-84"></a>
+</span><span id="__span-7-85"><a id="__codelineno-7-85" name="__codelineno-7-85"></a>    <span class="k">return</span> <span class="n">blueprint</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>create githiub pull request agains master, get a review and after being approved merge the changes to master.</p>
+</li>
+<li>When the changes are merged to master the CI/CD pipline kicks in and automatically deploys your changes. </li>
+<li>When the deploy is complete your new endpoint should be accesible via <code>GET https://api.exodusmobility.io/api/transaction/&lt;qid&gt;</code></li>
+</ol>
+<h5 id="adding-an-api-endpoint-by-adding-a-new-falsk-bleuprint_1">Adding an API endpoint by adding a new falsk bleuprint</h5>
+<p>Lets assume we want to add a new blueprint to the web API called example.py that conatians a flask view named ExampleView that returns a 200 response for an authenticated get request. We will need to:</p>
+<ol>
+<li>
+<p>Create the new example.py blueprint file in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/src/api/blueprints/core/web">/src/api/blueprints/core/web/</a></p>
+</li>
+<li>
+<p>In the new blueprint we add the bew vie called ExampleView</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">flask.views</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">MethodView</span><span class="p">):</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">():</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a>        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">Response</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Add the create_blueprint function and in it register the requred before and after request function hooks, error handler functions  and attach the view we have created.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span>
+<span class="normal"><a href="#__codelineno-9-19">19</a></span>
+<span class="normal"><a href="#__codelineno-9-20">20</a></span>
+<span class="normal"><a href="#__codelineno-9-21">21</a></span>
+<span class="normal"><a href="#__codelineno-9-22">22</a></span>
+<span class="normal"><a href="#__codelineno-9-23">23</a></span>
+<span class="normal"><a href="#__codelineno-9-24">24</a></span>
+<span class="normal"><a href="#__codelineno-9-25">25</a></span>
+<span class="normal"><a href="#__codelineno-9-26">26</a></span>
+<span class="normal"><a href="#__codelineno-9-27">27</a></span>
+<span class="normal"><a href="#__codelineno-9-28">28</a></span>
+<span class="normal"><a href="#__codelineno-9-29">29</a></span>
+<span class="normal"><a href="#__codelineno-9-30">30</a></span>
+<span class="normal"><a href="#__codelineno-9-31">31</a></span>
+<span class="normal"><a href="#__codelineno-9-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">flask</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="kn">import</span> <span class="nn">flask.views</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kn">from</span> <span class="nn">api.blueprints.common</span> <span class="kn">import</span> <span class="n">api_json_response</span><span class="p">,</span> <span class="n">make_api_error</span><span class="p">,</span> <span class="n">remove_global_user</span><span class="p">,</span> <span class="n">set_clerk_global_user</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="kn">from</span> <span class="nn">api.blueprints.errors</span> <span class="kn">import</span> <span class="n">APIError</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">MethodView</span><span class="p">):</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">():</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">Response</span><span class="p">()</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="k">def</span> <span class="nf">create_blueprint</span><span class="p">(</span><span class="n">at_prefix</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a>    <span class="n">blueprint</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">Blueprint</span><span class="p">(</span><span class="s2">&quot;Example&quot;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">before_request</span><span class="p">(</span><span class="n">set_clerk_global_user</span><span class="p">)</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">after_request</span><span class="p">(</span><span class="n">remove_global_user</span><span class="p">)</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17"></a>    <span class="n">blueprint</span><span class="o">.</span><span class="n">register_error_handler</span><span class="p">(</span><span class="n">APIError</span><span class="p">,</span> <span class="n">make_api_error</span><span class="p">)</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18"></a>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19"></a>    <span class="k">def</span> <span class="nf">add_url_rule</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">view_func</span><span class="p">):</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20"></a>        <span class="n">blueprint</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">view_func</span><span class="o">=</span><span class="n">view_func</span><span class="p">)</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21"></a>        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;Core_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">view_func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span><span class="p">:</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is already in the url_for_cache&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24"></a>        <span class="n">blueprint</span><span class="o">.</span><span class="n">api_url_for_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">at_prefix</span><span class="p">,</span> <span class="n">rule</span><span class="p">)</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25"></a>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26"></a>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27"></a>    <span class="n">add_url_rule</span><span class="p">(</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28"></a>        <span class="s2">&quot;/example_url&quot;</span><span class="p">,</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29"></a>        <span class="n">view_func</span><span class="o">=</span><span class="n">ExampleView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">),</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30"></a>    <span class="p">)</span>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31"></a>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32"></a>    <span class="k">return</span> <span class="n">blueprint</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>On the <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/terraform/web_core_ecs_service/main.tf#L8">/terraform/web_core_ecs_service/main.tf</a> update the entry_point to start this new blueprint.</p>
+<div class="language-tf highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span>
+<span class="normal"><a href="#__codelineno-10-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;web-core-service&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="na">source</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;../modules/ecs_service&quot;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="na">number_of_containers</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="na">service_name</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;web&quot;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="na">alb_listener_port</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">443</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="na">launch_name_prefix</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;web-core&quot;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="na">path_pattern</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/api/*&quot;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="na">entry_point</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;api-run-server&quot;, &quot;--workers&quot;, &quot;2&quot;, &quot;-i&quot;, &quot;0.0.0.0&quot;, &quot;-trace-id&quot;, &quot;X-Amzn-Trace-Id&quot;, &quot;core.web.example:/api&quot;  &quot;core.web.account:/api&quot;, &quot;core.web.health:/api&quot;, &quot;core.web.beneficiary:/api&quot;, &quot;core.web.transactions:/api&quot;</span><span class="p">]</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>create githiub pull request agains master, get a review and after being approved merge the changes to master.</p>
+</li>
+<li>When the changes are merged to master the CI/CD pipline kicks in and automatically deploys your changes. </li>
+<li>When the deploy is complete your new endpoint should be accesible via <code>GET https://api.exodusmobility.io/api/example_url</code></li>
+</ol>
+<h3 id="webhooks">Webhooks</h3>
+<p>This is the micro service that handles webhook request from external platforms. Currently we recive webhooks from two platforms cleark and Tanda.</p>
+<ol>
+<li>
+<p>cleark - <code>SMS webhooks</code> -: OTP SMS to send to users phones via our SMS service
+          - <code>User Webhooks</code> -: webhooks sent due to a user change event on cleark (creation, user update, user delete). We use these events to sync with cleark user accounts.</p>
+</li>
+<li>
+<p>Tanda - <code>Tanda callbacks</code> :- callbacks that tanda sends back to us to update us on a transaction that we initiated via API
+         - <code>Tanda Notifications</code> :- Notifications send to us when a user makes a payment via the Tanda paybill or bank account to topup their wallet</p>
+</li>
+</ol>
+<p>This  micro service is  an <a href="https://aws.amazon.com/ecs/">AWS ECS service</a> named <code>ipn</code> deployed in AWS region <code>me-south-1</code>. The Ecs service definition is done in terraform and the files are found in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/terraform/ipn_ecs_service">/terraform/ipn_ecs_service/*</a>. The flask blueprints for this micro service are found in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/src/api/blueprints/webhooks">/usrc/api/blueprints/webhooks/* </a></p>
+<h4 id="configuring-cleark-webhooks">Configuring cleark webhooks</h4>
+<ul>
+<li>To Add a new cleark webhook go to the Clerk Dashboard and navigate to the <a href="https://dashboard.clerk.com/last-active?path=webhooks&amp;_gl=1*1e78ayw*_ga*MTg1NzAyNTExOS4xNzExMzc0NzE1*_ga_1WMF5X234K*MTcxMTM3NDcxNC4xLjEuMTcxMTM3NDczNC4wLjAuMA..*_gcl_au*MTU3NzcxNTkzMy4xNzExMzc0NzE1">Webhooks</a> page. Select the Add Endpoint button.</li>
+</ul>
+<p><img alt="image" src="https://clerk.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F_docs%2Fmain%2Fintegrations%2Finngest%2Fwebhook-page.webp&amp;w=3840&amp;q=75" /></p>
+<ul>
+<li>
+<p>You'll be presented with a form where you can specify the URL of your backend endpoint. This is the URL where Clerk will send the webhook events. You can also specify the events you want to receive. For example, if you only want to receive events related to users, you can select the user option.</p>
+</li>
+<li>
+<p>Once you click the Create button, you'll be presented with your webhook endpoint dashboard. Here you can see the URL of your endpoint and the events you selected and you can also test your endpoint</p>
+</li>
+</ul>
+<h4 id="configuring-tanda-webhooks">Configuring Tanda webhooks</h4>
+<p>Tanda webhooks are per virtual account and they are set at account creation. We usaually set the same endpoint which points to the webhook service. This config is added in code  for <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/terraform/modules/ecs_service_worker/data.tf#L62">callbacks</a> and <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/terraform/modules/ecs_service_worker/data.tf#L63">confirmation</a> endpoint </p>
+<p>To update this value Raise a pr and update those subsequent values then re-deploy all the services.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not update these values if you don't understand the consiquences of that action. Updating the values will only affect the newly created accounts and you will neeed to backfill the others via tanda API</p>
+</div>
+<h3 id="event-worker">Event Worker</h3>
+<p>This is the Micro service that listes to the events SQS queue and handle the event. Thi is  an <a href="https://aws.amazon.com/ecs/">AWS ECS service</a> named <code>events-worker</code> deployed in AWS region <code>me-south-1</code>. The ECS service definition is done in terraform and the files are found in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/terraform/event_worker_ecs_service">/terraform/event_worker_ecs_service/*</a>. The source code for this worker is found in <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/src/api/workers/events_worker.py">/usrc/api/workers/events_worker.py </a> The event types definitions and event handlers are found in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/src/api/events">/usrc/api/events/*</a></p>
+<p>Events can be triggerd from any micro service in the core service, this can be done by creating an event object form spcific event class and calling  <code>&lt;event object&gt;.emmit()</code> to trigger the event.</p>
+<p>For example to create a debit acccount event :
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span>
+<span class="normal"><a href="#__codelineno-11-7">7</a></span>
+<span class="normal"><a href="#__codelineno-11-8">8</a></span>
+<span class="normal"><a href="#__codelineno-11-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="n">event</span> <span class="o">=</span> <span class="n">DebitAccountEvent</span><span class="p">(</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a>    <span class="n">account</span><span class="o">=</span><span class="n">account</span><span class="p">,</span> 
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a>    <span class="n">amount</span><span class="o">=</span><span class="n">receipt</span><span class="o">.</span><span class="n">amount</span><span class="p">,</span> 
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a>    <span class="n">narration</span><span class="o">=</span><span class="s2">&quot;some narration}&quot;</span><span class="p">)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a>    <span class="n">event</span><span class="o">.</span><span class="n">emmit_delayed</span><span class="p">(</span><span class="n">delay_seconds</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h4 id="event-types">Event Types</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Event Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>REGISTER_ACCOUNT</code></td>
+<td style="text-align: left;">register a wallet on exodus</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ADJUST_ACCOUNT_BALANCE</code></td>
+<td style="text-align: left;">update a wallets account balance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ACTIVATE_ACCOUNT_EVENT</code></td>
+<td style="text-align: left;">sync a tanda wallet with the registerd exodus account</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PAYMENT_STK_PUSH</code></td>
+<td style="text-align: left;">send an stk push request to someoones phone</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PAYMENT_DISBURSMENT</code></td>
+<td style="text-align: left;">send  money from an exodus wallet to a valid chanel</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PAYMENT_CHECK_STATUS</code></td>
+<td style="text-align: left;">Check the satatus of a payment transacton on tandda</td>
+</tr>
+</tbody>
+</table>
+<p>The event SQS queue is an <a href="https://aws.amazon.com/sqs/">AWS SQS queue</a> named <code>events-queue</code> deployed in aws region <code>me-south-1</code>. The queue definition was done via terraform and files are found in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/terraform/sqs/events">/terraform/sqs/events/*</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To update the queue or it's properties update the queue's terraform files with the properties you want and apply the terrafom changes using <code>terraform apply</code></p>
+</div>
+<h3 id="data-layer">Data layer</h3>
+<p>We model the data layer of our core service around a postgres database. We use <a href="https://www.sqlalchemy.org/">sqlalchemy</a> as the ORM to interact with the said database. The databsae table models are found in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/src/api/models">/src/api/models/*</a> of our code base.</p>
+<p>We use <a href="https://alembic.sqlalchemy.org/en/latest/">alembic</a> to migrate our database. This is done automatically when you merge your data bse migrations to the main branch. The alembic configuration file is located <a href="https://github.com/Exodus-Mobility/dw-backend/blob/main/src/alembic.ini">here (alembic.ini)</a> and the migration files are located in <a href="https://github.com/Exodus-Mobility/dw-backend/tree/main/src/api/models/alembic/versions">/src/api/models/alembic/versions/*</a></p>
+<p>All of our Alembic model classes <em>must</em> inherit from <code>model.BaseModel</code> class. This class is packed with utility methods and validators that are helpfull on the data layer. The new class will also be required to define a <code>__qid_prefix_</code> class variable and assign it a two letter workd to denote the QID that will be prefixed to the ID whil sharing the id via API. The QUD prefix selcted should not be already picked this value is unique.</p>
+<p>see example to addd a new table called some_new_table:</p>
+<p>Add the model class definition in models module</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-20">20</a></span>
+<span class="normal"><a href="#__codelineno-12-21">21</a></span>
+<span class="normal"><a href="#__codelineno-12-22">22</a></span>
+<span class="normal"><a href="#__codelineno-12-23">23</a></span>
+<span class="normal"><a href="#__codelineno-12-24">24</a></span>
+<span class="normal"><a href="#__codelineno-12-25">25</a></span>
+<span class="normal"><a href="#__codelineno-12-26">26</a></span>
+<span class="normal"><a href="#__codelineno-12-27">27</a></span>
+<span class="normal"><a href="#__codelineno-12-28">28</a></span>
+<span class="normal"><a href="#__codelineno-12-29">29</a></span>
+<span class="normal"><a href="#__codelineno-12-30">30</a></span>
+<span class="normal"><a href="#__codelineno-12-31">31</a></span>
+<span class="normal"><a href="#__codelineno-12-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20"></a><span class="kn">import</span> <span class="nn">sqlalchemy</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21"></a>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22"></a><span class="kn">import</span> <span class="nn">api.models</span> <span class="k">as</span> <span class="nn">model</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23"></a><span class="n">sa</span> <span class="o">=</span> <span class="n">sqlalchemy</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24"></a>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25"></a><span class="k">class</span> <span class="nc">SomeNewTable</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;some_new_table&quot;</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27"></a>    <span class="n">__qid_prefix__</span> <span class="o">=</span> <span class="s2">&quot;SM&quot;</span>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28"></a>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29"></a>    <span class="nb">id</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30"></a>    <span class="n">created_when</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31"></a>    <span class="n">updated_when</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">onupdate</span><span class="o">=</span><span class="n">utcnow</span><span class="p">)</span>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">Text</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>run alembic command in folder <code>/src/</code> to generate a migration file in <code>/src/api/models/alembic/versions/</code> folder.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>alembic<span class="w"> </span>revision<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;add new table some new table&quot;</span>
+</span></code></pre></div>
+<p>On the generated migration template file, edit to add the actual migration on the <code>upgrade</code> and <code>downgrade</code> functions</p>
+<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span>
+<span class="normal"><a href="#__codelineno-14-17">17</a></span>
+<span class="normal"><a href="#__codelineno-14-18">18</a></span>
+<span class="normal"><a href="#__codelineno-14-19">19</a></span>
+<span class="normal"><a href="#__codelineno-14-20">20</a></span>
+<span class="normal"><a href="#__codelineno-14-21">21</a></span>
+<span class="normal"><a href="#__codelineno-14-22">22</a></span>
+<span class="normal"><a href="#__codelineno-14-23">23</a></span>
+<span class="normal"><a href="#__codelineno-14-24">24</a></span>
+<span class="normal"><a href="#__codelineno-14-25">25</a></span>
+<span class="normal"><a href="#__codelineno-14-26">26</a></span>
+<span class="normal"><a href="#__codelineno-14-27">27</a></span>
+<span class="normal"><a href="#__codelineno-14-28">28</a></span>
+<span class="normal"><a href="#__codelineno-14-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="s2">&quot;&quot;&quot;Add new table some new table</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="s2">Revision ID: 79525dgdge</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="s2">Revises: 89999dbfdvfhf</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="s2">Create Date: 2025-08-02 04:28:17.177534+00:00</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="c1"># revision identifiers, used by Alembic.</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="nv">revision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;79525dgdge&quot;</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="nv">down_revision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;89999dbfdvfhf&quot;</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12"></a>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13"></a>import<span class="w"> </span>sqlalchemy<span class="w"> </span>as<span class="w"> </span>sa
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14"></a>from<span class="w"> </span>alembic<span class="w"> </span>import<span class="w"> </span>op
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15"></a>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17"></a>def<span class="w"> </span>upgrade<span class="o">()</span>:
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="w">    </span>op.create_table<span class="o">(</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="w">        </span><span class="s2">&quot;some_new_table&quot;</span>,
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="w">        </span>sa.Column<span class="o">(</span><span class="s2">&quot;id&quot;</span>,<span class="w"> </span>sa.Integer<span class="o">()</span>,<span class="w"> </span><span class="nv">nullable</span><span class="o">=</span>False<span class="o">)</span>,
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="w">        </span>sa.Column<span class="o">(</span><span class="s2">&quot;created_when&quot;</span>,<span class="w"> </span>sa.DateTime<span class="o">()</span>,<span class="w"> </span><span class="nv">nullable</span><span class="o">=</span>False<span class="o">)</span>,
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22"></a><span class="w">        </span>sa.Column<span class="o">(</span><span class="s2">&quot;updated_when&quot;</span>,<span class="w"> </span>sa.DateTime<span class="o">()</span>,<span class="w"> </span><span class="nv">nullable</span><span class="o">=</span>True<span class="o">)</span>,
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="w">        </span>sa.Column<span class="o">(</span><span class="s2">&quot;name&quot;</span>,<span class="w"> </span>sa.String<span class="o">()</span>,<span class="w"> </span><span class="nv">nullable</span><span class="o">=</span>False<span class="o">)</span>,,
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24"></a><span class="w">        </span>sa.PrimaryKeyConstraint<span class="o">(</span><span class="s2">&quot;id&quot;</span>,<span class="w"> </span><span class="nv">name</span><span class="o">=</span>op.f<span class="o">(</span><span class="s2">&quot;pk_users_&quot;</span><span class="o">))</span>,,
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25"></a><span class="w">    </span><span class="o">)</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26"></a>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27"></a>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28"></a>def<span class="w"> </span>downgrade<span class="o">()</span>:
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29"></a><span class="w">    </span>op.drop_table<span class="o">(</span><span class="s2">&quot;some_new_table&quot;</span><span class="o">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Raise a PR and when you merge your PR to production your migrations will be run automatically by the continous deployemnet pipeline</p>
+<h3 id="monitoring">Monitoring</h3>
+<p>We use <a href="https://sentry.io/welcome/">Sentry</a> for alertiing us when the softawer crashes in production due to any unforseen errors or bugs or updates that may have been made.  This notification will point you to the point on the code that is the culprit.
+For application logging This service uses <a href="https://www.papertrail.com/">papertrail</a> to log. We use the papartrail dashboad to view the system logs on this microservice. use the two services to trobleshoot whenever you have issues with the system. </p>
+<h3 id="secrets">Secrets</h3>
+<p>The core service has 5 secrest configured <code>DATABASE_URI</code>, <code>FLASK_SECRET_KEY</code>, <code>TANDA_BASE_URL</code>, <code>TANDA_CLIENT_ID</code>, <code>TANDA_CLIENT_SECRET</code>, and <code>TANDA_ORG_ID</code>. The 5 secrets are stored on our side using <a href="https://aws.amazon.com/secrets-manager/">AWS Secrets manager</a> the secret key is called <code>prod-secrets</code>. To update these values log into the AWS console and go to  Secrets Manager. From the list of secrets, choose <code>prod-secrets</code>. On the secret details page, on the Overview tab, in the Secret value section, choose Retrieve secret value and then choose Edit, the update the secrets.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>only update any othe above secrest if you know the consiquences of what you are doing, you may corrupt data or lead to a system failure.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../xussd/" class="md-footer__link md-footer__link--prev" aria-label="Previous: USSD Service">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                USSD Service
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../zeaddmod/" class="md-footer__link md-footer__link--next" aria-label="Next: Adding A new Service">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Adding A new Service
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.tabs.link", "content.code.copy", "content.code.annotate", "navigation.footer"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+    
+  </body>
+</html>
